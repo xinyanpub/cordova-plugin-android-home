@@ -37,6 +37,7 @@ public class Home extends CordovaPlugin {
         if ("goHome".equals(action)) {
             try {               
                 Intent i = new Intent(Intent.ACTION_MAIN);
+                i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 i.addCategory(Intent.CATEGORY_HOME);
                 this.cordova.getActivity().startActivity(i);
 
